@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { NAV_ITEMS, SITE_NAME } from '@/lib/constants'
+import { NAV_ITEMS, SITE_NAME, WHATSAPP_URL } from '@/lib/constants'
+import { WhatsAppIcon } from '@/components/whatsapp-icon'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -85,14 +86,15 @@ export function Header() {
 
             {/* CTA */}
             <motion.a
-              href="https://wa.link/nksx9o"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-cyan-900/30 transition hover:from-cyan-400 hover:to-blue-500 md:inline-flex lg:px-5 lg:text-sm"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              Let&apos;s Talk
+              <span>Let&apos;s Talk</span>
+              <WhatsAppIcon className="h-4 w-4 shrink-0 text-white" />
             </motion.a>
 
             <motion.button
@@ -148,13 +150,14 @@ export function Header() {
                   </motion.a>
                 ))}
                 <a
-                  href="https://wa.link/nksx9o"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mx-2 mt-2 flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 py-3.5 text-sm font-semibold text-white"
+                  className="mx-2 mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 py-3.5 text-sm font-semibold text-white"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Let&apos;s Talk on WhatsApp
+                  <span>Let&apos;s Talk on WhatsApp</span>
+                  <WhatsAppIcon className="h-5 w-5 shrink-0 text-white" />
                 </a>
               </div>
             </motion.nav>

@@ -5,6 +5,9 @@ export const SITE_TITLE = 'Creative Project Manager & Product Leader'
 export const SITE_DESCRIPTION =
   'Crafting exceptional digital experiences through strategic project management, creative direction, and innovative product thinking.'
 
+/** WhatsApp deep link (wa.me / WhatsApp Business). */
+export const WHATSAPP_URL = 'https://wa.link/nksx9o'
+
 // Featured projects data
 export const FEATURED_PROJECTS = [
   {

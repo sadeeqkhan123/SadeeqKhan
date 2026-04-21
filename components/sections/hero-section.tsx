@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SITE_TITLE, SITE_DESCRIPTION } from '@/lib/constants'
+import { SITE_DESCRIPTION, WHATSAPP_URL } from '@/lib/constants'
+import { WhatsAppIcon } from '@/components/whatsapp-icon'
 import { duration, easing } from '@/lib/animations'
 
 export function HeroSection() {
@@ -119,20 +120,25 @@ export function HeroSection() {
           }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
         >
-          <motion.button
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transition-colors shadow-lg shadow-blue-900/40"
+          <motion.a
+            href="/#featured-work"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-lg shadow-lg shadow-blue-900/40 transition-colors hover:from-blue-700 hover:to-cyan-600"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             View My Work
-          </motion.button>
-          <motion.button
-            className="px-8 py-4 rounded-full glass text-slate-100 hover:bg-white/20 font-semibold text-lg transition-colors"
+          </motion.a>
+          <motion.a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full glass font-semibold text-lg text-slate-100 transition-colors hover:bg-white/20"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Get In Touch
-          </motion.button>
+            <WhatsAppIcon className="h-5 w-5 shrink-0 text-emerald-400" />
+          </motion.a>
         </motion.div>
       </div>
 

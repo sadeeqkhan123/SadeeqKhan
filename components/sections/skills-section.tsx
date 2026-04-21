@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SKILLS } from '@/lib/constants'
+import { SKILLS, WHATSAPP_URL } from '@/lib/constants'
+import { WhatsAppIcon } from '@/components/whatsapp-icon'
 import { GlassCard } from '@/components/glass-card'
 import { containerVariants, itemVariants, duration, easing } from '@/lib/animations'
 
@@ -81,12 +82,15 @@ export function SkillsSection() {
             Looking for specific expertise? Let&apos;s discuss your project.
           </p>
           <motion.a
-            href="/#contact"
-            className="inline-flex rounded-full bg-white px-8 py-4 text-lg font-semibold text-black transition-colors hover:bg-white/90"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-8 py-4 text-lg font-semibold text-black transition-colors hover:bg-white/90"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Start a Conversation
+            <WhatsAppIcon className="h-5 w-5 shrink-0 text-emerald-600" />
           </motion.a>
         </motion.div>
       </div>
